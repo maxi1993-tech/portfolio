@@ -1,0 +1,133 @@
+/* ==========================================
+   COULEURS COMMUNES
+   ========================================== */
+
+:root {
+  // Boutons pleins
+  --color-accent-background: hsl(27.53 34.14% 51.18%);
+  --color-accent-background-hover: hsl(27.5 36% 57%);
+  --color-accent-background-active: hsl(27.5 38% 62%);
+
+  // Focus clavier
+  --color-focus-ring: var(--color-accent);
+
+  // Texte indicatif des formulaires
+  --color-text-placeholder: var(--color-text-secondary);
+
+  // Sélection de texte
+  --color-selection-background: var(--color-accent-background-soft);
+  --color-selection-text: var(--color-text-primary);
+}
+
+/* ==========================================
+   THÈME CLAIR
+   ========================================== */
+
+:root,
+[data-theme='light'] {
+  // Arrière-plans
+  --color-page-background: hsl(60 20% 99.02%);
+  --color-surface-background: hsl(0 0% 99.61%);
+
+  // Textes
+  --color-text-primary: hsl(60 6.67% 11.76%);
+  --color-text-secondary: hsl(60 2.67% 36.67%);
+
+  // Bordures
+  --color-border-subtle: hsl(60 3.53% 83.33%);
+  --color-border-strong: hsl(60 2.9% 52.75%);
+
+  // Accentuation
+  --color-accent: hsl(27 31.58% 37.25%);
+  --color-text-on-accent: hsl(0 0% 6.67%);
+  --color-accent-background-soft: hsl(26.09 40.35% 88.82%);
+
+  // Couleurs décoratives
+  --color-decoration-blue: hsl(208.24 41.46% 91.96%);
+  --color-decoration-lavender: hsl(268 42.86% 93.14%);
+  --color-decoration-mint: hsl(180 36.59% 91.96%);
+
+  // Surfaces interactives
+  --color-surface-background-hover: hsl(60 5% 96%);
+  --color-surface-background-active: hsl(60 5% 93%);
+
+  // Éléments désactivés
+  --color-background-disabled: hsl(60 2% 89%);
+  --color-text-disabled: hsl(60 2% 42%);
+
+  // Succès
+  --color-feedback-success-text: hsl(150 70% 25%);
+  --color-feedback-success-background: hsl(150 45% 92%);
+
+  // Erreur
+  --color-feedback-error-text: hsl(0 68% 34%);
+  --color-feedback-error-background: hsl(0 68% 94%);
+
+  // Avertissement
+  --color-feedback-warning-text: hsl(33 80% 28%);
+  --color-feedback-warning-background: hsl(40 80% 93%);
+
+  // Information
+  --color-feedback-info-text: hsl(210 65% 34%);
+  --color-feedback-info-background: hsl(210 55% 93%);
+
+  // Superpositions et ombres
+  --color-overlay: hsl(0 0% 0% / 55%);
+  --color-shadow: hsl(0 0% 0% / 12%);
+}
+
+/* ==========================================
+   THÈME SOMBRE
+   ========================================== */
+
+[data-theme='dark'] {
+  // Arrière-plans
+  --color-page-background: hsl(60 3.03% 6.47%);
+  --color-surface-background: hsl(60 4.17% 9.41%);
+
+  // Textes
+  --color-text-primary: hsl(60 27.27% 91.37%);
+  --color-text-secondary: hsl(60 6.92% 68.82%);
+
+  // Bordures
+  --color-border-subtle: hsl(60 8.26% 21.37%);
+  --color-border-strong: hsl(60 4.72% 41.57%);
+
+  // Accentuation
+  --color-accent: hsl(27.04 50.35% 72.35%);
+  --color-text-on-accent: hsl(60 3.03% 6.47%);
+  --color-accent-background-soft: hsl(26.25 19.05% 16.47%);
+
+  // Couleurs décoratives
+  --color-decoration-blue: hsl(210 21.21% 12.94%);
+  --color-decoration-lavender: hsl(270 22.22% 14.12%);
+  --color-decoration-mint: hsl(180 21.31% 11.96%);
+
+  // Surfaces interactives
+  --color-surface-background-hover: hsl(60 4% 13%);
+  --color-surface-background-active: hsl(60 4% 17%);
+
+  // Éléments désactivés
+  --color-background-disabled: hsl(60 3% 16%);
+  --color-text-disabled: hsl(60 3% 62%);
+
+  // Succès
+  --color-feedback-success-text: hsl(150 45% 70%);
+  --color-feedback-success-background: hsl(150 25% 17%);
+
+  // Erreur
+  --color-feedback-error-text: hsl(5 75% 76%);
+  --color-feedback-error-background: hsl(0 30% 17%);
+
+  // Avertissement
+  --color-feedback-warning-text: hsl(38 85% 73%);
+  --color-feedback-warning-background: hsl(35 35% 17%);
+
+  // Information
+  --color-feedback-info-text: hsl(210 75% 76%);
+  --color-feedback-info-background: hsl(210 30% 17%);
+
+  // Superpositions et ombres
+  --color-overlay: hsl(0 0% 0% / 70%);
+  --color-shadow: hsl(0 0% 0% / 45%);
+}

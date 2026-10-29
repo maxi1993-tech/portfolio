@@ -1,0 +1,89 @@
+/* ==========================================
+   RESET — Portfolio Max
+   Base inspirée d'Andy Bell et Josh Comeau
+   ========================================== */
+
+/* 1. Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Marges par défaut */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol {
+  margin: 0;
+}
+
+/* 3. Body */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* 4. Images et médias */
+img,
+picture,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+/* 5. Champs de formulaire */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* 6. Gestion des mots longs */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Équilibrage des titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* 8. Listes volontairement sans puces */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+
+/* 9. Attribut hidden */
+[hidden]:not([hidden='until-found']) {
+  display: none !important;
+}

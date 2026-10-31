@@ -1,0 +1,26 @@
+@use 'sass:math';
+
+// ---------------------------------------------------------
+// FLUIDITÉ
+// fluid(mobile, desktop) : valeurs Figma en px, sans unité.
+// Renvoie un clamp() en rem : valeur mobile à 375px,
+// valeur desktop à 1440px, bornée en dehors.
+// ---------------------------------------------------------
+$view-min: 375;
+$view-max: 1440;
+
+@function fluid($mobile-px, $desktop-px) {
+    // px → rem (base 16px)
+    $mobile-rem: math.div($mobile-px, 16) * 1rem;
+    $desktop-rem: math.div($desktop-px, 16) * 1rem;
+    // Pente : px gagnés par px d'écran
+    $slope: math.div($desktop-px - $mobile-px, $view-max - $view-min);
+    // Ordonnée à l'origine : valeur pour un écran de 0px
+    $intercept: math.div($mobile-px - $slope * $view-min, 16) * 1rem;
+    // Pente × largeur d'écran (100vw = toute la largeur)
+    $viewport-part: $slope * 100vw;
+
+    @return clamp(math.min($mobile-rem, $desktop-rem),
+        $intercept + $viewport-part,
+        math.max($mobile-rem, $desktop-rem));
+}

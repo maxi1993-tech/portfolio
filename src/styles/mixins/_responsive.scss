@@ -1,0 +1,8 @@
+/// Applique les styles à partir d'une largeur minimale.
+/// Utilisation : @include responsive.from(64rem) { ... }
+
+@mixin from($min-width) {
+    @media (min-width: $min-width) {
+        @content;
+    }
+}

@@ -3,6 +3,22 @@
 import "../src/styles/main.scss"
 import type { Preview } from "@storybook/react-vite"
 
+// Tailles des vues Figma
+const figmaViewports = {
+  mobile: {
+    name: "Mobile 375",
+    styles: { width: "375px", height: "812px" },
+  },
+  tablet: {
+    name: "Tablet 768",
+    styles: { width: "768px", height: "1024px" },
+  },
+  desktop: {
+    name: "Desktop 1440",
+    styles: { width: "1440px", height: "900px" },
+  },
+}
+
 const preview: Preview = {
   parameters: {
     controls: {
@@ -13,10 +29,11 @@ const preview: Preview = {
     },
 
     a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
       test: "todo",
+    },
+
+    viewport: {
+      options: figmaViewports,
     },
   },
 }

@@ -1,8 +1,10 @@
 import "./Header.scss"
-import logo from "../../assets/icons/branding/clair/monogramme-mc.svg"
-import logoMenu from "../../assets/icons/interface/clair/menu.svg"
-import logoBreak from "../../assets/icons/interface/clair/pause-animations.svg"
-import logoMoon from "../../assets/icons/interface/clair/theme-lune.svg"
+import PersonnalIcon from "../../assets/icons/branding/clair/monogramme-mc.svg?react"
+import MenuIcon from "../../assets/icons/interface/clair/menu.svg?react"
+import PausedIcon from "../../assets/icons/interface/clair/pause-animations.svg?react"
+import PlayIcon from "../../assets/icons/interface/clair/reprendre-animations.svg?react"
+import MoonIcon from "../../assets/icons/interface/clair/theme-lune.svg?react"
+import SunIcon from "../../assets/icons/interface/clair/theme-soleil.svg?react"
 import { useState } from "react"
 
 type HeaderProps = {
@@ -23,8 +25,12 @@ export function Header({
   return (
     <header className="header" id="header">
       <div className="wrapper header__wrapper">
-        <a className="header__logo" href="#header">
-          <img src={logo} alt="Retour en haut de page" />
+        <a
+          className="header__logo"
+          href="#header"
+          aria-label="Retour en haut de page"
+        >
+          <PersonnalIcon aria-hidden="true" />
         </a>
 
         <div className="header__container">
@@ -38,7 +44,7 @@ export function Header({
             onClick={() => setIsOpen((current) => !current)}
             aria-expanded={isOpen}
           >
-            <img src={logoMenu} alt="" />
+            <MenuIcon aria-hidden="true" />
             Menu
           </button>
           <div
@@ -84,7 +90,11 @@ export function Header({
                 aria-pressed={isPaused}
                 aria-label="Pause des animations"
               >
-                <img src={logoBreak} alt="" />
+                {isPaused ? (
+                  <PlayIcon aria-hidden="true" />
+                ) : (
+                  <PausedIcon aria-hidden="true" />
+                )}
               </button>
               <button
                 className="header__button"
@@ -93,7 +103,11 @@ export function Header({
                 aria-pressed={isDark}
                 aria-label="Mode sombre"
               >
-                <img src={logoMoon} alt="" />
+                {isDark ? (
+                  <SunIcon aria-hidden="true" />
+                ) : (
+                  <MoonIcon aria-hidden="true" />
+                )}
               </button>
             </div>
           </div>

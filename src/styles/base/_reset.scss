@@ -54,7 +54,13 @@ textarea {
   font: inherit;
 }
 
-/* 6. Gestion des mots longs */
+/* 6. Boutons */
+button {
+  background-color: transparent;
+  color: inherit;
+}
+
+/* 7. Gestion des mots longs */
 p,
 h1,
 h2,
@@ -65,7 +71,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* 7. Équilibrage des titres */
+/* 8. Équilibrage des titres */
 h1,
 h2,
 h3,
@@ -75,14 +81,14 @@ h6 {
   text-wrap: balance;
 }
 
-/* 8. Listes volontairement sans puces */
+/* 9. Listes volontairement sans puces */
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
   padding: 0;
 }
 
-/* 9. Attribut hidden */
+/* 10. Attribut hidden */
 [hidden]:not([hidden="until-found"]) {
   display: none !important;
 }

@@ -3,8 +3,23 @@ import logo from "../../assets/icons/branding/clair/monogramme-mc.svg"
 import logoMenu from "../../assets/icons/interface/clair/menu.svg"
 import logoBreak from "../../assets/icons/interface/clair/pause-animations.svg"
 import logoMoon from "../../assets/icons/interface/clair/theme-lune.svg"
+import { useState } from "react"
 
-export function Header() {
+type HeaderProps = {
+  isDark: boolean
+  onToggleTheme: () => void
+  isPaused: boolean
+  onTogglePaused: () => void
+}
+
+export function Header({
+  isDark,
+  onToggleTheme,
+  isPaused,
+  onTogglePaused,
+}: HeaderProps) {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <header className="header" id="header">
       <div className="wrapper header__wrapper">
@@ -14,14 +29,23 @@ export function Header() {
 
         <div className="header__container">
           <button
-            className="header__menu-toggle header__menu-toggle--open"
+            className={
+              isOpen
+                ? "header__menu-toggle header__menu-toggle--open"
+                : "header__menu-toggle"
+            }
             type="button"
-            aria-label="Ouvrir le menu"
+            onClick={() => setIsOpen((current) => !current)}
+            aria-expanded={isOpen}
           >
             <img src={logoMenu} alt="" />
             Menu
           </button>
-          <div className="header__menu header__menu--open">
+          <div
+            className={
+              isOpen ? "header__menu header__menu--open" : "header__menu"
+            }
+          >
             <nav className="header__nav">
               <ul className="header__list">
                 <li className="header__item">
@@ -56,14 +80,18 @@ export function Header() {
               <button
                 className="header__button"
                 type="button"
-                aria-label="Désactiver les animations"
+                onClick={onTogglePaused}
+                aria-pressed={isPaused}
+                aria-label="Pause des animations"
               >
                 <img src={logoBreak} alt="" />
               </button>
               <button
                 className="header__button"
                 type="button"
-                aria-label="Activer le mode sombre"
+                onClick={onToggleTheme}
+                aria-pressed={isDark}
+                aria-label="Mode sombre"
               >
                 <img src={logoMoon} alt="" />
               </button>

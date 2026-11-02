@@ -1,10 +1,9 @@
+import { PortfolioPage } from "./pages/PortfolioPage"
+
 function App() {
 
-  return (
-    <main>
-      <h1>Test</h1>
-    </main>
-  )
+  return <PortfolioPage />
+
 }
 
 export default App

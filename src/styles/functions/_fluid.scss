@@ -2,19 +2,23 @@
 
 // ---------------------------------------------------------
 // FLUIDITÉ
-// fluid(mobile, desktop) : valeurs Figma en px, sans unité.
-// Renvoie un clamp() en rem : valeur mobile à 375px,
-// valeur desktop à 1440px, bornée en dehors.
+// fluid(mobile, desktop, breakpoint-max)
+// - mobile, desktop : tailles Figma en px, sans unité.
+// - breakpoint-max : largeur d'écran où la progression
+//   s'arrête, en px sans unité.
+// Renvoie un clamp() en rem : taille mobile à 375px,
+// taille desktop à breakpoint-max, bornée en dehors.
+// Sans troisième paramètre, 1440 est utilisé.
 // ---------------------------------------------------------
 $view-min: 375;
 $view-max: 1440;
 
-@function fluid($mobile-px, $desktop-px) {
+@function fluid($mobile-px, $desktop-px, $breakpoint-max: $view-max) {
     // px → rem (base 16px)
     $mobile-rem: math.div($mobile-px, 16) * 1rem;
     $desktop-rem: math.div($desktop-px, 16) * 1rem;
     // Pente : px gagnés par px d'écran
-    $slope: math.div($desktop-px - $mobile-px, $view-max - $view-min);
+    $slope: math.div($desktop-px - $mobile-px, $breakpoint-max - $view-min);
     // Ordonnée à l'origine : valeur pour un écran de 0px
     $intercept: math.div($mobile-px - $slope * $view-min, 16) * 1rem;
     // Pente × largeur d'écran (100vw = toute la largeur)

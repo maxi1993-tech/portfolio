@@ -2,7 +2,7 @@
 /// Utilisation : @include responsive.from(64rem) { ... }
 
 @mixin from($min-width) {
-    @media (min-width: $min-width) {
-        @content;
-    }
+  @media (min-width: $min-width) {
+    @content;
+  }
 }

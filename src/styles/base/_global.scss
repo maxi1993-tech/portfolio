@@ -1,33 +1,33 @@
 // Styles généraux du portfolio — Livre Dev Final.
 
 :root {
-    color-scheme: light;
+  color-scheme: light;
 }
 
-:root[data-theme='dark'] {
-    color-scheme: dark;
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
-    // Typographie
-    font-family: var(--font-family-body);
-    font-size: var(--font-size-body);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-body);
+  // Typographie
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
 
-    // Couleurs
-    color: var(--color-text-primary);
-    background-color: var(--color-page-background);
+  // Couleurs
+  color: var(--color-text-primary);
+  background-color: var(--color-page-background);
 }
 
 // Focus visible lors de la navigation au clavier
 :focus-visible {
-    outline: 2px solid var(--color-focus-ring);
-    outline-offset: 3px;
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 3px;
 }
 
 // Sélection du texte
 ::selection {
-    color: var(--color-selection-text);
-    background-color: var(--color-selection-background);
+  color: var(--color-selection-text);
+  background-color: var(--color-selection-background);
 }

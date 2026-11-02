@@ -1,13 +1,11 @@
-import './PortfolioPage.scss';
+import "./PortfolioPage.scss"
 
-import { Header } from "../components/Header/Header";
+import { Header } from "../components/Header/Header"
 
 export function PortfolioPage() {
-
-    return (
-        <div className='portfolio-page'>
-            <Header />
-        </div>
-
-    )
+  return (
+    <div className="portfolio-page">
+      <Header />
+    </div>
+  )
 }

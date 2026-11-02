@@ -8,12 +8,20 @@ import SunIcon from "../../assets/icons/interface/clair/theme-soleil.svg?react"
 import { useState } from "react"
 
 type HeaderProps = {
+  /** Vrai quand le thème sombre est actif : le bouton thème est enfoncé et affiche le soleil. */
   isDark: boolean
+  /** Active et désactive le dark mode. */
   onToggleTheme: () => void
+  /** Vrai quand la pause des animations est active : le bouton pause est enfoncé et affiche l’icône lecture. */
   isPaused: boolean
+  /** Active et désactive la mise en pause des animations. */
   onTogglePaused: () => void
 }
 
+/**
+ * En-tête du portfolio : logo, navigation, boutons pause et thème.
+ * En mobile, la navigation s'ouvre avec le bouton Menu ; en desktop, elle est toujours visible.
+ */
 export function Header({
   isDark,
   onToggleTheme,
